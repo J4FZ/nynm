@@ -1,0 +1,77 @@
+<!--Gym Finder
+Show map of nearest gyms
+
+Show list of cheapest gyms
+
+Work out best value for money + time to walk/drive-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NYNM - Gym Locator</title>
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+<!-- 	Background image div
+		postcode entry	-->
+<div class="section text-center">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+	<a class="navbar-brand" href="#">
+          <img src="./images/templogo.png" alt="NYNM">
+        </a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+	<h1 class="h1DarkerBg">Let's find your new gym</h1>
+	<h5>Enter your postcode below to begin.</h5>
+	<form class="text-center" method="get">
+	<div class="form-group">
+		<label for="gfPostcode">Postcode</label>
+		<input id="address" type="postcode" name="gfPostcode" required>
+		<!-- ADVANCED OPTIONS-->
+		<!-- Choice of max distance from postcode-->
+		
+		<!-- Dropdown choices of membership-->
+		</div>
+		<a><button type="submit" class="btn-primary" onclick="checkZip(getElementById('address').value)">Find Me A Gym</button></a>
+	</form>
+	</div>
+<div class="video-container">
+<div class="color-overlay"></div>
+<video autoplay muted id="myVideo"></video>
+</div>
+
+</div>
+<!-- 	White background
+		Map of postcode and nearby gyms	-->
+<div id="mapContainer" class="col-12 text-center">
+<h1>Your Results</h1>
+<div id="map"></div>
+</div>
+		
+		
+		
+<!-- 	White background
+		List and links to gyms	
+		Sortable by distance,
+		price & both(default) as well as gym features-->
+		
+<div class="col-12 text-center">
+<h3>Closest gym to you</h3>
+<p>k;lkjghojkglhjlghkjkydfbsbkdfskdfkfsdfsdmnfnsmdnfmsdmfsndm</p>
+<h3>Cheapest gym near you</h3>
+<p>sfkdjkiriroikrjflkjlkjlksldsfjdkfjlsfdfs</p>
+<h3>Our recommendation for you</h3>
+<p>hfksajdhfksjdhfksjdhfkjsdhjjskdjfhsjdhkfjsfd</p>
+</div>
+<script src='./scripts/videos.js'></script>		
+<script src='./scripts/mapbox.js'></script>		
+</body>
+</html>

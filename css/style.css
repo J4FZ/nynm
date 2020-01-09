@@ -1,0 +1,105 @@
+body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	color: #8a989e;
+	font-family: 'Roboto', sans-serif;
+}
+
+.section{
+	position:relative;
+	width: 100%;
+	height: 100vh;
+	left:0;
+	top:0;
+	overflow:hidden;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+.container{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+.navbar-brand img{
+	padding-top: 30px;
+	padding-left: 30px;
+}
+
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  z-index: -1;
+}
+
+.video-container video{
+	min-width: 100%;
+}
+
+.color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.5;
+}
+
+h1{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color:#8a989e;
+}
+
+.h1DarkerBg{
+	color: #e3e7ee;
+}
+
+
+h5{
+	padding-bottom: 20px;
+	color: #8a989e;
+}
+
+label{
+	color: #8a989e;
+	padding-bottom: 20px;
+}
+
+.btn-primary{
+	border-radius: 100px;
+}
+
+
+
+#mapContainer{
+	position: relative;
+}
+#map {
+width:60%;
+height: 400px;
+top:0;
+bottom: 0;
+position: relative;
+padding: 0;
+margin: 0;
+display: inline-block;
+}
+
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+  #map {
+    width: 80%;
+  }
+}
