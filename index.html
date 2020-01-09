@@ -14,10 +14,13 @@ Work out best value for money + time to walk/drive-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
 	<link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
-</head>
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
+	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css" type="text/css"/>
+	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+<script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+	</head>
 <body>
-<!-- 	Background image div
-		postcode entry	-->
 <div class="section text-center">
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -28,20 +31,11 @@ Work out best value for money + time to walk/drive-->
     </div>
   </div>
 </nav>
-<div class="container">
+<div class="input-container">
 	<h1 class="h1DarkerBg">Let's find your new gym</h1>
-	<h5>Enter your postcode below to begin.</h5>
-	<form class="text-center" method="get">
-	<div class="form-group">
-		<label for="gfPostcode">Postcode</label>
-		<input id="address" type="postcode" name="gfPostcode" required>
-		<!-- ADVANCED OPTIONS-->
-		<!-- Choice of max distance from postcode-->
-		
-		<!-- Dropdown choices of membership-->
-		</div>
-		<a><button type="submit" class="btn-primary" onclick="checkZip(getElementById('address').value)">Find Me A Gym</button></a>
-	</form>
+	<h5>Simply click the button below and click 'Allow' when prompted. No data will be stored by us.</h5>
+
+		<button type="submit" class="btn-primary btn-lg" onclick="test()">Find Me A Gym</button>
 	</div>
 <div class="video-container">
 <div class="color-overlay"></div>
@@ -53,6 +47,7 @@ Work out best value for money + time to walk/drive-->
 		Map of postcode and nearby gyms	-->
 <div id="mapContainer" class="col-12 text-center">
 <h1>Your Results</h1>
+<p id="noLocation">You have not given location permission. This is required for the site to function.<br>Please click the button above and give permission when prompted.</p>
 <div id="map"></div>
 </div>
 		
@@ -65,11 +60,16 @@ Work out best value for money + time to walk/drive-->
 		
 <div class="col-12 text-center">
 <h3>Closest gym to you</h3>
-<p>k;lkjghojkglhjlghkjkydfbsbkdfskdfkfsdfsdmnfnsmdnfmsdmfsndm</p>
+<p>N/A</p>
+<hr>
 <h3>Cheapest gym near you</h3>
-<p>sfkdjkiriroikrjflkjlkjlksldsfjdkfjlsfdfs</p>
+<p>N/A</p>
+<hr>
 <h3>Our recommendation for you</h3>
-<p>hfksajdhfksjdhfksjdhfkjsdhjjskdjfhsjdhkfjsfd</p>
+<p>N/A</p>
+<hr>
+<h3>All results</h3>
+<p>N/A</p>
 </div>
 <script src='./scripts/videos.js'></script>		
 <script src='./scripts/mapbox.js'></script>		
